@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RetinaX Case Study — Dhruv Prakash</title>
+  <meta name="theme-color" content="#050510" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%237c3aed'/%3E%3Cstop offset='100%25' stop-color='%2306b6d4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect rx='20' width='100' height='100' fill='%23050510'/%3E%3Ctext x='50' y='66' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='38' fill='url(%23g)'%3EDP%3C/text%3E%3C/svg%3E" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Case Study specific overrides */
+    .case-hero { padding: 12rem 0 6rem; text-align: center; position: relative; border-bottom: 1px solid var(--color-border); background: radial-gradient(circle at 50% 0%, rgba(124, 58, 237, 0.08) 0%, transparent 70%); }
+    .case-back { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; color: var(--color-accent-light); font-weight: 500; margin-bottom: 2rem; transition: transform 0.3s ease; }
+    .case-back:hover { transform: translateX(-5px); }
+    .case-content { padding: 5rem 0; max-width: 800px; margin: 0 auto; }
+    .case-section { margin-bottom: 4rem; }
+    .case-section h2 { font-family: var(--font-display); font-size: 2rem; margin-bottom: 1.5rem; color: var(--color-text); }
+    .case-section p { color: var(--color-text-muted); font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem; }
+    .case-meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; padding: 3rem; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); margin-top: -3rem; margin-bottom: 4rem; position: relative; z-index: 10; box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+    .meta-item h4 { font-family: var(--font-mono); font-size: 0.8rem; color: var(--color-accent-light); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .meta-item p { color: var(--color-text); font-weight: 500; font-size: 1rem; }
+    .meta-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  </style>
+</head>
+<body>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursor-follower"></div>
+  <div class="scroll-progress" id="scroll-progress"></div>
+  <nav id="main-nav" class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo" id="nav-logo" data-magnetic><span class="nav__logo-bracket">&lt;</span>DP64<span class="nav__logo-bracket"> /&gt;</span></a>
+      <a href="index.html" class="btn btn--ghost btn--sm">Back to Home</a>
+    </div>
+  </nav>
+
+  <header class="case-hero">
+    <div class="container">
+      <a href="index.html" class="case-back">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Back to Portfolio
+      </a>
+      <h1 class="hero__name" style="font-size: clamp(2.5rem, 6vw, 4.5rem); margin-bottom: 1rem;">RetinaX</h1>
+      <p class="hero__tagline">Automated Diabetic Retinopathy Screening</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="case-meta">
+      <div class="meta-item">
+        <h4>Role</h4>
+        <p>Lead AI Developer (Hackathon)</p>
+      </div>
+      <div class="meta-item">
+        <h4>Event</h4>
+        <p>Smart India Hackathon</p>
+      </div>
+      <div class="meta-item">
+        <h4>Stack</h4>
+        <div class="meta-tags project-card__tags">
+          <span>MATLAB</span><span>Simulink</span><span>CLAHE</span><span>Grad-CAM</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-content">
+      <section class="case-section">
+        <h2>The Problem</h2>
+        <p>
+          Diabetic Retinopathy (DR) is a leading cause of blindness globally, yet its early detection relies heavily on manual grading of retinal fundus images by highly trained ophthalmologists. In areas with high patient volumes and a shortage of specialists, the delay in screening often results in irreversible vision loss before treatment can begin. A critical issue with existing AI solutions in this domain is their "black-box" nature — doctors are hesitant to trust a diagnosis when they cannot see the AI's reasoning.
+        </p>
+      </section>
+
+      <section class="case-section">
+        <h2>The Beneficiaries</h2>
+        <p>
+          <strong>Primary:</strong> Ophthalmologists and clinical staff who can use this tool to rapidly triage patient scans, prioritizing cases that show severe progression.<br><br>
+          <strong>Secondary:</strong> Diabetic patients who receive faster, standardized diagnostic results, significantly increasing their chances of early, preventative treatment.
+        </p>
+      </section>
+
+      <section class="case-section">
+        <h2>Technical Implementation</h2>
+        <p>
+          We built an end-to-end automated screening pipeline. The first and most crucial step is image pre-processing. Since clinical fundus cameras often produce unevenly lit images, we implemented CLAHE (Contrast Limited Adaptive Histogram Equalization) to normalize contrast across the retinal surface without amplifying background noise.
+        </p>
+        <p>
+          Once enhanced, the images are fed into a customized neural network architecture designed to segment specific lesions (such as microaneurysms, hemorrhages, and hard exudates). Finally, to solve the "black-box" problem, we integrated Grad-CAM (Gradient-weighted Class Activation Mapping). This generates a heatmap overlay directly on the original fundus image, visibly highlighting the exact lesions the model focused on to output its ICDR severity grade.
+        </p>
+      </section>
+
+      <section class="case-section">
+        <h2>Outcome & Impact</h2>
+        <p>
+          The pipeline successfully automated the International Clinical Diabetic Retinopathy (ICDR) severity grading with high concordance to expert manual grading. The inclusion of Grad-CAM heatmaps proved to be a game-changer for clinical trust, translating abstract AI predictions into transparent, clinically actionable visual insights.
+        </p>
+      </section>
+      
+      <div style="text-align: center; margin-top: 4rem;">
+        <a href="index.html" class="btn btn--primary btn--glow">Return to Portfolio</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer" id="footer" style="margin-top: 4rem;">
+    <div class="footer__gradient-line"></div>
+    <div class="container">
+      <div class="footer__inner">
+        <p class="footer__copy">Designed & Built by <strong>Dhruv Prakash</strong> · 2026</p>
+      </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

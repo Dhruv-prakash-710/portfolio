@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Autonomous Welfare Concierge — Case Study</title>
+  <meta name="theme-color" content="#050510" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%237c3aed'/%3E%3Cstop offset='100%25' stop-color='%2306b6d4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect rx='20' width='100' height='100' fill='%23050510'/%3E%3Ctext x='50' y='66' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='38' fill='url(%23g)'%3EDP%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .case-hero { padding: 12rem 0 6rem; text-align: center; position: relative; border-bottom: 1px solid var(--color-border); background: radial-gradient(circle at 50% 0%, rgba(124, 58, 237, 0.08) 0%, transparent 70%); }
+    .case-back { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; color: var(--color-accent-light); font-weight: 500; margin-bottom: 2rem; transition: transform 0.3s ease; }
+    .case-back:hover { transform: translateX(-5px); }
+    .case-content { padding: 5rem 0; max-width: 800px; margin: 0 auto; }
+    .case-section { margin-bottom: 4rem; }
+    .case-section h2 { font-family: var(--font-display); font-size: 2rem; margin-bottom: 1.5rem; color: var(--color-text); }
+    .case-section p { color: var(--color-text-muted); font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem; }
+    .case-meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; padding: 3rem; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); margin-top: -3rem; margin-bottom: 4rem; position: relative; z-index: 10; box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+    .meta-item h4 { font-family: var(--font-mono); font-size: 0.8rem; color: var(--color-accent-light); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .meta-item p { color: var(--color-text); font-weight: 500; font-size: 1rem; }
+    .meta-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  </style>
+</head>
+<body>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursor-follower"></div>
+  <div class="scroll-progress" id="scroll-progress"></div>
+  <nav id="main-nav" class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo" id="nav-logo" data-magnetic><span class="nav__logo-bracket">&lt;</span>DP64<span class="nav__logo-bracket"> /&gt;</span></a>
+      <a href="index.html" class="btn btn--ghost btn--sm">Back to Home</a>
+    </div>
+  </nav>
+
+  <header class="case-hero">
+    <div class="container">
+      <a href="index.html" class="case-back">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Back to Portfolio
+      </a>
+      <h1 class="hero__name" style="font-size: clamp(2.5rem, 6vw, 4.5rem); margin-bottom: 1rem;">Autonomous Welfare Concierge</h1>
+      <p class="hero__tagline">AI-Powered Government Scheme Matching</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="case-meta">
+      <div class="meta-item">
+        <h4>Role</h4>
+        <p>Full-Stack AI Developer</p>
+      </div>
+      <div class="meta-item">
+        <h4>Type</h4>
+        <p>Civic Tech Project</p>
+      </div>
+      <div class="meta-item">
+        <h4>Stack</h4>
+        <div class="meta-tags project-card__tags">
+          <span>Gemini API</span><span>NLP</span><span>Python</span><span>Multilingual</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-content">
+      <section class="case-section">
+        <h2>The Problem</h2>
+        <p>
+          Governments offer thousands of welfare schemes aimed at assisting vulnerable populations, but the discovery and application process is notoriously labyrinthine. Citizens must navigate dense, bureaucratic eligibility documents spread across dozens of disjointed portals. Consequently, the people who most desperately need these schemes are often the ones least equipped to find them.
+        </p>
+      </section>
+
+      <section class="case-section">
+        <h2>The Beneficiaries</h2>
+        <p>
+          <strong>Primary:</strong> Citizens from lower socioeconomic backgrounds who may have limited technical literacy or speak regional Indian languages. They can finally bypass bureaucratic friction and instantly discover the financial and social support they are legally entitled to.
+        </p>
+      </section>
+
+      <section class="case-section">
+        <h2>Technical Implementation</h2>
+        <p>
+          To solve this, I built a conversational civic-tech platform powered by the Google Gemini API. The architecture centers around a robust Natural Language Processing (NLP) engine capable of understanding complex, unformatted human input in multiple Indian languages. 
+        </p>
+        <p>
+          Instead of forcing users to fill out 50-field forms, the application allows a user to simply speak or type their situation (e.g., "I am a single mother of two living in UP working as a weaver"). The backend engine dynamically parses these entities, cross-references them against a vectorized database of stringent government eligibility criteria, and disambiguates missing data points by asking context-aware follow-up questions.
+        </p>
+      </section>
+
+      <section class="case-section">
+        <h2>Outcome & Impact</h2>
+        <p>
+          By translating complex policy documents into an accessible, conversational interface, the Autonomous Welfare Concierge effectively democratizes access to public resources. It reduces the time required to find an applicable scheme from hours of manual research to a matter of seconds, bridging the critical gap between public policy and the citizens it is designed to serve.
+        </p>
+      </section>
+      
+      <div style="text-align: center; margin-top: 4rem;">
+        <a href="index.html" class="btn btn--primary btn--glow">Return to Portfolio</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer" id="footer" style="margin-top: 4rem;">
+    <div class="footer__gradient-line"></div>
+    <div class="container">
+      <div class="footer__inner">
+        <p class="footer__copy">Designed & Built by <strong>Dhruv Prakash</strong> · 2026</p>
+      </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
